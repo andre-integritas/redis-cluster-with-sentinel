@@ -55,7 +55,7 @@ docker-compose scale sentinel=3
 Scale out the instance number of slaves
 
 ```
-docker-compose scale slave=4
+docker-compose scale slave=2
 ```
 
 Check the status of redis cluster
@@ -75,13 +75,11 @@ redisclusterwithsentinel_sentinel_2   entrypoint.sh                    Up      6
 redisclusterwithsentinel_sentinel_3   entrypoint.sh                    Up      6379/tcp 
 redisclusterwithsentinel_slave_1      docker-entrypoint.sh redis ...   Up      6379/tcp 
 redisclusterwithsentinel_slave_2      docker-entrypoint.sh redis ...   Up      6379/tcp 
-redisclusterwithsentinel_slave_3      docker-entrypoint.sh redis ...   Up      6379/tcp 
-redisclusterwithsentinel_slave_4      docker-entrypoint.sh redis ...   Up      6379/tcp 
 ```
 
 For stop master redis server.
 ```
- docker-compose unpause master
+ docker-compose pause master
 ```
 And get the sentinel infomation with following commands
 
